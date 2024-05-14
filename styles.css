@@ -1,0 +1,98 @@
+/* Estila el html para que tenga el header arriba de todo, ocupando todo el ancho de la pantalla. La navbar ocupando todo el ancho de la pantalla, con hover.
+Un aside a la izquierda, ocupando el 20% del ancho de la pantalla, el main ocupando el 60%, y el otro aside ocupando lo restante.
+El footer abajo de todo, ocupando todo el ancho de la pantalla. Comenzar desarrollando la versión para celulares y aplicar reglas CSS Flexbox para que el mismo contenido se adapte para tablet y desktop. */}
+/* Path: styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #021118;
+    padding: 1rem;
+    color: #f0f0f0;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+
+aside {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.cotizaciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.old {
+    display: none;
+}
+
+section {
+    padding: 10px;
+}
+
+footer {
+    background-color: #021118;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+footer img {
+    width: 40px;
+    margin: 0 10px;
+} 
