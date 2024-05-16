@@ -1,98 +1,295 @@
-/* Estila el html para que tenga el header arriba de todo, ocupando todo el ancho de la pantalla. La navbar ocupando todo el ancho de la pantalla, con hover.
-Un aside a la izquierda, ocupando el 20% del ancho de la pantalla, el main ocupando el 60%, y el otro aside ocupando lo restante.
-El footer abajo de todo, ocupando todo el ancho de la pantalla. Comenzar desarrollando la versión para celulares y aplicar reglas CSS Flexbox para que el mismo contenido se adapte para tablet y desktop. */}
-/* Path: styles.css */
+/* estilos base - mobile first */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: darkgrey;
+  overflow-x: hidden;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: #021118;
-    padding: 1rem;
-    color: #f0f0f0;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #021118;
+  padding: 1rem;
+  color: #f0f0f0;
+  gap: 1rem;
 }
 
 .logo img {
-    width: 100px;
+  width: 100px;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 nav ul li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: lightgray;
+  color: lightgray;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    height: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  justify-content: center;
+  width: 100%;
 }
 
 aside {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-}
-
-.cotizaciones {
-    display: flex;
-    justify-content: space-between;
+  display: none;
 }
 
 .old {
-    display: none;
-}
-
-section {
-    padding: 10px;
+  display: none;
 }
 
 footer {
-    background-color: #021118;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
+  background-color: #021118;
+  color: white;
+  position: static;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer img {
-    width: 40px;
-    margin: 0 10px;
-} 
+  width: 35px;
+  margin: 0 10px;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.titulo {
+  background-color: #021118;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.separator {
+  margin-top: 20px;
+  border-top: 0.5px solid rgb(209, 209, 209);
+  padding-top: 5px;
+}
+
+.no-mobile {
+  display: none;
+}
+
+.principales {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* estilos para tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .old {
+    display: none;
+  }
+
+  main {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .cotizaciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    max-height: 80%;
+  }
+
+  aside {
+    display: flex;
+    background-color: rgb(133, 132, 132);
+    color: #021118;
+    height: 100%;
+    width: 20%;
+    padding: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .no-mobile {
+    display: inline;
+  }
+
+  .no-tablet {
+    display: none;
+  }
+
+  .principales {
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 1;
+  }
+
+  header {
+    z-index: 2;
+  }
+
+  footer {
+    z-index: 2;
+  }
+}
+
+/* estilos para desktop */
+@media screen and (min-width: 1024px) {
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #021118;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #f1f1f1;
+    border-radius: 6px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .no-tablet {
+    display: block;
+  }
+
+  .no-mobile {
+    display: block;
+  }
+
+  main {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .old {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(133, 132, 132);
+    margin-top: 1rem;
+  }
+
+  .cotizaciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    max-height: 80%;
+    margin-top: 1rem;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(133, 132, 132);
+    color: #021118;
+    height: 100%;
+    width: 20%;
+    padding: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    overflow-y: auto;
+  }
+
+  .old .separator {
+    display: block;
+  }
+
+  .principales {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: scroll;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    z-index: 1;
+  }
+
+  .principales::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .principales::-webkit-scrollbar-track {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: #021118;
+    border-radius: 10px;
+  }
+
+  .principales::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+  }
+
+  .principales::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  header {
+    z-index: 2;
+  }
+
+  footer {
+    z-index: 2;
+  }
+}
