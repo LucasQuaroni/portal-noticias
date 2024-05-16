@@ -126,6 +126,14 @@ footer img {
   padding: 1rem;
 }
 
+.principales img {
+  display: none;
+}
+
+.centrar-img {
+  display: none;
+}
+
 /* estilos para tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .old {
@@ -265,6 +273,17 @@ footer img {
     z-index: 1;
   }
 
+  .principales img {
+    display: block;
+    width: 50%;
+  }
+
+  .centrar-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .principales::-webkit-scrollbar {
     width: 12px;
   }
@@ -282,6 +301,26 @@ footer img {
   }
 
   .principales::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  aside::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  aside::-webkit-scrollbar-track {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: #021118;
+    border-radius: 10px;
+  }
+
+  aside::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+  }
+
+  aside::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 
