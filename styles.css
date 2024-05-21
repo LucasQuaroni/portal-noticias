@@ -127,11 +127,14 @@ footer img {
 }
 
 .principales img {
-  display: none;
+  height: 80%;
+  width: 80%;
 }
 
 .centrar-img {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* estilos para tablet */
@@ -275,7 +278,8 @@ footer img {
 
   .principales img {
     display: block;
-    width: 50%;
+    height: 80%;
+    width: 80%;
   }
 
   .centrar-img {
