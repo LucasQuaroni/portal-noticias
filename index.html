@@ -1,94 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LaCiudad</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="logo">
-      <a class="links" href="index.html"
-        ><img src="resources/logo.png" alt="Logo de LaCiudad"
-      /></a>
-      <a class="links" href="index.html"><h1>La Ciudad</h1></a>
-    </div>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main>
-      <aside class="no-tablet">
-        <div class="old">
-          <h3>Noticias del ayer</h3>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario del primer Mundial de Fútbol</h4>
-            <p>
-              El 30 de julio de 1930, Uruguay se consagró campeón en el primer
-              Mundial de Fútbol, derrotando a Argentina 4-2 en la final.
-            </p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario de la fundación de Buenos Aires</h4>
-            <p>
-              El 2 de febrero de 1536, Pedro de Mendoza fundó la ciudad de
-              Buenos Aires, estableciendo el primer asentamiento europeo en la
-              región.
-            </p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario del primer vuelo argentino</h4>
-            <p>
-              El 17 de diciembre de 1908, Jorge Newbery realizó el primer vuelo
-              argentino con un avión construido por él mismo, el "Newbery I".
-            </p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario del primer Mundial de Fútbol</h4>
-            <p>
-              El 30 de julio de 1930, Uruguay se consagró campeón en el primer
-              Mundial de Fútbol, derrotando a Argentina 4-2 en la final.
-            </p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario de la fundación de Buenos Aires</h4>
-            <p>
-              El 2 de febrero de 1536, Pedro de Mendoza fundó la ciudad de
-              Buenos Aires, estableciendo el primer asentamiento europeo en la
-              región.
-            </p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Aniversario del primer vuelo argentino</h4>
-            <p>
-              El 17 de diciembre de 1908, Jorge Newbery realizó el primer vuelo
-              argentino con un avión construido por él mismo, el "Newbery I".
-            </p>
-          </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaCiudad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="logo">
+    <div class="logo-center">
+      <svg class="menu-hamburguesa" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px" fill="#fff">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z">
+          </path>
+        </svg>
+        <use xlink:href="#menu"></use>
+      </svg>
+    </div>
+    <div class="right">
+      <a class="links" href="index.html"><img src="resources/logo.png" alt="Logo de LaCiudad" /></a>
+      <a class="links" href="index.html">
+        <h1>La Ciudad</h1>
+      </a>
+    </div>
+  </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="no-tablet">
+      <div class="old">
+        <h3>Noticias del ayer</h3>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario del primer Mundial de Fútbol</h4>
+          <p>
+            El 30 de julio de 1930, Uruguay se consagró campeón en el primer
+            Mundial de Fútbol, derrotando a Argentina 4-2 en la final.
+          </p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario de la fundación de Buenos Aires</h4>
+          <p>
+            El 2 de febrero de 1536, Pedro de Mendoza fundó la ciudad de
+            Buenos Aires, estableciendo el primer asentamiento europeo en la
+            región.
+          </p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario del primer vuelo argentino</h4>
+          <p>
+            El 17 de diciembre de 1908, Jorge Newbery realizó el primer vuelo
+            argentino con un avión construido por él mismo, el "Newbery I".
+          </p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario del primer Mundial de Fútbol</h4>
+          <p>
+            El 30 de julio de 1930, Uruguay se consagró campeón en el primer
+            Mundial de Fútbol, derrotando a Argentina 4-2 en la final.
+          </p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario de la fundación de Buenos Aires</h4>
+          <p>
+            El 2 de febrero de 1536, Pedro de Mendoza fundó la ciudad de
+            Buenos Aires, estableciendo el primer asentamiento europeo en la
+            región.
+          </p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Aniversario del primer vuelo argentino</h4>
+          <p>
+            El 17 de diciembre de 1908, Jorge Newbery realizó el primer vuelo
+            argentino con un avión construido por él mismo, el "Newbery I".
+          </p>
+        </section>
+      </div>
+    </aside>
+    <section class="principales">
+      <h1 class="titulo">Últimas noticias</h1>
+      <article>
+        <h2>El Congreso aprueba la Ley de Matrimonio Igualitario</h2>
+        <p>
+          El 15 de julio de 2010, el Congreso argentino aprobó la Ley de
+          Matrimonio Igualitario, convirtiendo a Argentina en el primer país
+          de América Latina en legalizar el matrimonio entre personas del
+          mismo sexo.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/aniversario_matrimonio_igualitario_3x2.jpg" alt="matrimonio-igualitario">
         </div>
-      </aside>
-      <section class="principales">
-        <h1 class="titulo">Últimas noticias</h1>
+      </article>
+      <div class="separator"></div>
+      <article>
+        <h2>
+          Argentina gana la medalla de oro en fútbol en los Juegos Olímpicos
+          de Atenas 2004
+        </h2>
+        <p>
+          El 28 de agosto de 2004, la selección argentina de fútbol ganó la
+          medalla de oro en los Juegos Olímpicos de Atenas 2004 al vencer a
+          Paraguay en la final con un marcador de 1-0.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/720376807.jpg" alt="arg-titulo">
+        </div>
+      </article>
+      <div class="separator"></div>
+      <article>
+        <h2>Argentina declara la independencia</h2>
+        <p>
+          El 9 de julio de 1816, Argentina declaró su independencia de España
+          en una asamblea reunida en San Miguel de Tucumán, marcando el inicio
+          de su camino como nación independiente.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/ea-9julio-2.jpg" alt="independencia-arg">
+        </div>
+      </article>
+      <div class="separator"></div>
+      <article>
+        <h2>Argentina gana la Copa Mundial de la FIFA 1986</h2>
+        <p>
+          El 29 de junio de 1986, la selección argentina de fútbol, liderada
+          por Diego Maradona, ganó la Copa Mundial de la FIFA al vencer a
+          Alemania Federal 3-2 en la final, celebrada en el Estadio Azteca de
+          México.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/seleccion-argentina-mundial-1986_1440x810_wmk.webp" alt="diego-mundial">
+        </div>
+      </article>
+      <div class="separator"></div>
+      <article>
+        <h2>Argentina atraviesa una crisis económica</h2>
+        <p>
+          En el año 2001, Argentina enfrentó una de las peores crisis
+          económicas de su historia, caracterizada por altas tasas de
+          desempleo, devaluación de la moneda y una profunda recesión.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/61bf439fb36a0.jpg" alt="arg-crisis">
+        </div>
+      </article>
+      <div class="separator"></div>
+      <article>
+        <h2>La Revolución de Mayo</h2>
+        <p>
+          El 25 de mayo de 1810, se produjo en Buenos Aires la Revolución de
+          Mayo, que marcó el inicio del proceso de independencia de Argentina
+          respecto de España.
+        </p>
+        <div class="centrar-img">
+          <img src="resources/25-de-mayo-20210520-1176062.jpg" alt="">
+        </div>
+      </article>
+      <div class="no-mobile">
+        <div class="separator"></div>
         <article>
           <h2>El Congreso aprueba la Ley de Matrimonio Igualitario</h2>
           <p>
@@ -165,148 +254,63 @@
             <img src="resources/25-de-mayo-20210520-1176062.jpg" alt="">
           </div>
         </article>
-        <div class="no-mobile">
-          <div class="separator"></div>
-          <article>
-            <h2>El Congreso aprueba la Ley de Matrimonio Igualitario</h2>
-            <p>
-              El 15 de julio de 2010, el Congreso argentino aprobó la Ley de
-              Matrimonio Igualitario, convirtiendo a Argentina en el primer país
-              de América Latina en legalizar el matrimonio entre personas del
-              mismo sexo.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/aniversario_matrimonio_igualitario_3x2.jpg" alt="matrimonio-igualitario">
-            </div>
-          </article>
-          <div class="separator"></div>
-          <article>
-            <h2>
-              Argentina gana la medalla de oro en fútbol en los Juegos Olímpicos
-              de Atenas 2004
-            </h2>
-            <p>
-              El 28 de agosto de 2004, la selección argentina de fútbol ganó la
-              medalla de oro en los Juegos Olímpicos de Atenas 2004 al vencer a
-              Paraguay en la final con un marcador de 1-0.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/720376807.jpg" alt="arg-titulo">
-            </div>
-          </article>
-          <div class="separator"></div>
-          <article>
-            <h2>Argentina declara la independencia</h2>
-            <p>
-              El 9 de julio de 1816, Argentina declaró su independencia de España
-              en una asamblea reunida en San Miguel de Tucumán, marcando el inicio
-              de su camino como nación independiente.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/ea-9julio-2.jpg" alt="independencia-arg">
-            </div>
-          </article>
-          <div class="separator"></div>
-          <article>
-            <h2>Argentina gana la Copa Mundial de la FIFA 1986</h2>
-            <p>
-              El 29 de junio de 1986, la selección argentina de fútbol, liderada
-              por Diego Maradona, ganó la Copa Mundial de la FIFA al vencer a
-              Alemania Federal 3-2 en la final, celebrada en el Estadio Azteca de
-              México.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/seleccion-argentina-mundial-1986_1440x810_wmk.webp" alt="diego-mundial">
-            </div>
-          </article>
-          <div class="separator"></div>
-          <article>
-            <h2>Argentina atraviesa una crisis económica</h2>
-            <p>
-              En el año 2001, Argentina enfrentó una de las peores crisis
-              económicas de su historia, caracterizada por altas tasas de
-              desempleo, devaluación de la moneda y una profunda recesión.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/61bf439fb36a0.jpg" alt="arg-crisis">
-            </div>
-          </article>
-          <div class="separator"></div>
-          <article>
-            <h2>La Revolución de Mayo</h2>
-            <p>
-              El 25 de mayo de 1810, se produjo en Buenos Aires la Revolución de
-              Mayo, que marcó el inicio del proceso de independencia de Argentina
-              respecto de España.
-            </p>
-            <div class="centrar-img">
-              <img src="resources/25-de-mayo-20210520-1176062.jpg" alt="">
-            </div>
-          </article>
-        </div>
-      </section>
-      <aside>
-        <div class="cotizaciones">
-          <h3>Cotizacion de divisas</h3>
-          <p class="titulo">FIAT</p>
-          <section>
-            <div class="separator"></div>
-            <h4>Dolar</h4>
-            <p><b>Compra:</b> 20.50</p>
-            <p><b>Venta:</b> 21.00</p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Euro</h4>
-            <p><b>Compra:</b> 22.50</p>
-            <p><b>Venta:</b> 23.00</p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Libra</h4>
-            <p><b>Compra:</b> 25.50</p>
-            <p><b>Venta:</b> 26.00</p>
-          </section>
-        </div>
-        <div class="cotizaciones no-tablet">
-          <p class="titulo">CRYPTO</p>
-          <section>
-            <div class="separator"></div>
-            <h4>Bitcoin</h4>
-            <p><b>Compra:</b> 50000</p>
-            <p><b>Venta:</b> 51000</p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Ethereum</h4>
-            <p><b>Compra:</b> 3000</p>
-            <p><b>Venta:</b> 3100</p>
-          </section>
-          <section>
-            <div class="separator"></div>
-            <h4>Litecoin</h4>
-            <p><b>Compra:</b> 150</p>
-            <p><b>Venta:</b> 160</p>
-          </section>
-        </div>
-      </aside>
-    </main>
-    <footer>
-      <a class="links" href="index.html"
-        ><img class="logo-chico" src="resources/logo.png" alt="Logo de LaCiudad"
-      /></a>
-      <p>LaCiudad - 2024</p>
-      <div class="redes">
-        <a href="https://www.facebook.com"
-          ><img src="resources/facebook.png" alt="Facebook"
-        /></a>
-        <a href="https://www.twitter.com"
-          ><img src="resources/twitter.png" alt="Twitter"
-        /></a>
-        <a href="https://www.instagram.com"
-          ><img src="resources/instagram.png" alt="Instagram"
-        /></a>
       </div>
-    </footer>
-  </body>
+    </section>
+    <aside>
+      <div class="cotizaciones">
+        <h3>Cotizacion de divisas</h3>
+        <p class="titulo">FIAT</p>
+        <section>
+          <div class="separator"></div>
+          <h4>Dolar</h4>
+          <p><b>Compra:</b> 20.50</p>
+          <p><b>Venta:</b> 21.00</p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Euro</h4>
+          <p><b>Compra:</b> 22.50</p>
+          <p><b>Venta:</b> 23.00</p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Libra</h4>
+          <p><b>Compra:</b> 25.50</p>
+          <p><b>Venta:</b> 26.00</p>
+        </section>
+      </div>
+      <div class="cotizaciones no-tablet">
+        <p class="titulo">CRYPTO</p>
+        <section>
+          <div class="separator"></div>
+          <h4>Bitcoin</h4>
+          <p><b>Compra:</b> 50000</p>
+          <p><b>Venta:</b> 51000</p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Ethereum</h4>
+          <p><b>Compra:</b> 3000</p>
+          <p><b>Venta:</b> 3100</p>
+        </section>
+        <section>
+          <div class="separator"></div>
+          <h4>Litecoin</h4>
+          <p><b>Compra:</b> 150</p>
+          <p><b>Venta:</b> 160</p>
+        </section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <a class="links" href="index.html"><img class="logo-chico" src="resources/logo.png" alt="Logo de LaCiudad" /></a>
+    <p>LaCiudad - 2024</p>
+    <div class="redes">
+      <a href="https://www.facebook.com"><img src="resources/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.twitter.com"><img src="resources/twitter.png" alt="Twitter" /></a>
+      <a href="https://www.instagram.com"><img src="resources/instagram.png" alt="Instagram" /></a>
+    </div>
+  </footer>
+</body>
+
 </html>
