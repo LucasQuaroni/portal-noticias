@@ -1,14 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form");
   const submitButton = document.getElementById("submitButton");
+  const errores = [];
 
   submitButton.addEventListener("click", function (event) {
     event.preventDefault();
     if (validateForm()) {
       showAlert("¡Formulario enviado correctamente!");
       location.reload();
+    } else {
+      showAlert("Hay errores en el formulario: " + errores.join(", "));
     }
   });
+
+  const nombreInput = document.getElementById("nombre");
+  nombreInput.addEventListener("keyup", function () {
+    const hola = document.getElementById("hola");
+    hola.textContent = ", " + nombreInput.value;
+  }
+  );
 
   function validateForm() {
     let isValid = true;
@@ -21,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       isValid = false;
       nombreError.textContent = "El nombre es inválido";
+      errores.push("Nombre");
     } else {
       nombreError.textContent = "";
     }
@@ -31,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!emailRegex.test(emailInput.value)) {
       isValid = false;
       emailError.textContent = "El email es inválido";
+      errores.push("Email");
     } else {
       emailError.textContent = "";
     }
@@ -41,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
       passwordError.textContent =
         "Minimo 8 carat. y un num";
+      errores.push("Password");
     } else {
       passwordError.textContent = "";
     }
@@ -50,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (password2Input.value !== passwordInput.value) {
       isValid = false;
       password2Error.textContent = "Las contraseñas no coinciden";
+      errores.push("Contraseñas diferentes");
     } else {
       password2Error.textContent = "";
     }
@@ -60,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
       edadError.textContent =
         "La edad debe ser >= a 18";
+      errores.push("Edad");
     } else {
       edadError.textContent = "";
     }
@@ -70,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!telefonoRegex.test(telefonoInput.value)) {
       isValid = false;
       telefonoError.textContent = "El teléfono es inválido";
+      errores.push("Teléfono");
     } else {
       telefonoError.textContent = "";
     }
@@ -79,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (direccionInput.value.trim().length < 5) {
       isValid = false;
       direccionError.textContent = "La dirección es inválida";
+      errores.push("Dirección");
     } else {
       direccionError.textContent = "";
     }
@@ -88,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (ciudadInput.value.trim().length < 3) {
       isValid = false;
       ciudadError.textContent = "La ciudad es inválida";
+      errores.push("Ciudad");
     } else {
       ciudadError.textContent = "";
     }
@@ -97,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (codigoPostalInput.value.trim().length < 3) {
       isValid = false;
       codigoPostalError.textContent = "El código postal es inválido";
+      errores.push("Código Postal");
     } else {
       codigoPostalError.textContent = "";
     }
@@ -107,11 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!dniRegex.test(dniInput.value)) {
       isValid = false;
       dniError.textContent = "El DNI es inválido";
+      errores.push("DNI");
     } else {
       dniError.textContent = "";
     }
 
     return isValid;
+
+
   }
 
   function showAlert(message) {
