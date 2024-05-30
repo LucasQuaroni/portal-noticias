@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form");
   const submitButton = document.getElementById("submitButton");
-  const errores = [];
+
+  addFocusListeners();
+
+  const nombreInput = document.getElementById("nombre");
+  nombreInput.addEventListener("keyup", function () {
+    const hola = document.getElementById("hola");
+    hola.textContent = ", " + nombreInput.value;
+  });
 
   submitButton.addEventListener("click", function (event) {
     event.preventDefault();
-    if (validateForm()) {
+    const errores = [];
+    if (validateForm(errores)) {
       showAlert("¡Formulario enviado correctamente!");
       location.reload();
     } else {
@@ -13,14 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const nombreInput = document.getElementById("nombre");
-  nombreInput.addEventListener("keyup", function () {
-    const hola = document.getElementById("hola");
-    hola.textContent = ", " + nombreInput.value;
+  function addFocusListeners() {
+    const inputs = [
+      "nombre", "email", "password", "password2", "edad",
+      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+    ];
+    inputs.forEach(inputId => {
+      const inputElement = document.getElementById(inputId);
+      const errorElement = document.getElementById(`error-${inputId}`);
+      inputElement.addEventListener("focus", () => {
+        errorElement.textContent = "";
+      });
+    });
   }
-  );
 
-  function validateForm() {
+  function validateForm(errores) {
     let isValid = true;
 
     const nombreInput = document.getElementById("nombre");
@@ -51,8 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordError = document.getElementById("error-password");
     if (passwordInput.value.length < 8 || !/\d/.test(passwordInput.value)) {
       isValid = false;
-      passwordError.textContent =
-        "Minimo 8 carat. y un num";
+      passwordError.textContent = "Minimo 8 carat. y un num";
       errores.push("Password");
     } else {
       passwordError.textContent = "";
@@ -72,8 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const edadError = document.getElementById("error-edad");
     if (parseInt(edadInput.value) < 18 || isNaN(parseInt(edadInput.value))) {
       isValid = false;
-      edadError.textContent =
-        "La edad debe ser >= a 18";
+      edadError.textContent = "La edad debe ser >= a 18";
       errores.push("Edad");
     } else {
       edadError.textContent = "";
@@ -132,8 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return isValid;
-
-
   }
 
   function showAlert(message) {
