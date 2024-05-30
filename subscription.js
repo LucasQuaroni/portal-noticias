@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (validateForm()) {
       showAlert("¡Formulario enviado correctamente!");
-    } else {
-      showAlert("¡Formulario inválido! Revise los errores marcados.");
+      location.reload();
     }
   });
 
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       !nombreInput.value.includes(" ")
     ) {
       isValid = false;
-      nombreError.textContent = "El nombre completo es inválido";
+      nombreError.textContent = "El nombre es inválido";
     } else {
       nombreError.textContent = "";
     }
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (passwordInput.value.length < 8 || !/\d/.test(passwordInput.value)) {
       isValid = false;
       passwordError.textContent =
-        "La contraseña debe tener al menos 8 caracteres y contener al menos un número";
+        "Minimo 8 carat. y un num";
     } else {
       passwordError.textContent = "";
     }
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (parseInt(edadInput.value) < 18 || isNaN(parseInt(edadInput.value))) {
       isValid = false;
       edadError.textContent =
-        "La edad debe ser un número entero mayor o igual a 18";
+        "La edad debe ser >= a 18";
     } else {
       edadError.textContent = "";
     }
