@@ -143,6 +143,72 @@ footer img {
   align-items: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+#hola {
+  text-align: center;
+}
+
+.form-parts {
+  width: 100%;
+}
+
+input {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #021118;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #021118;
+  background-color: #021118;
+  color: white;
+  cursor: pointer;
+  min-width: 20%;
+  max-width: 20%;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.form-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: white;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.error {
+  color: red;
+}
+
 /* estilos para tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .old {
@@ -168,7 +234,7 @@ footer img {
 
   .logo-center {
     display: none;
-  }  
+  }
 
   nav {
     display: flex;
@@ -178,16 +244,16 @@ footer img {
     display: flex;
     list-style: none;
   }
-  
+
   nav ul li {
     margin-right: 20px;
   }
-  
+
   nav ul li a {
     color: white;
     text-decoration: none;
   }
-  
+
   nav ul li a:hover {
     color: lightgray;
   }
@@ -195,7 +261,7 @@ footer img {
   .menu-hamburguesa {
     display: none;
   }
-  
+
   .cotizaciones {
     display: flex;
     flex-direction: column;
@@ -236,6 +302,10 @@ footer img {
 
   footer {
     z-index: 2;
+  }
+
+  form {
+    width: 50%;
   }
 }
 
@@ -285,7 +355,7 @@ footer img {
 
   .logo-center {
     display: none;
-  }  
+  }
 
   nav {
     display: flex;
@@ -295,16 +365,16 @@ footer img {
     display: flex;
     list-style: none;
   }
-  
+
   nav ul li {
     margin-right: 20px;
   }
-  
+
   nav ul li a {
     color: white;
     text-decoration: none;
   }
-  
+
   nav ul li a:hover {
     color: lightgray;
   }
@@ -418,5 +488,30 @@ footer img {
 
   footer {
     z-index: 2;
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  form {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-group {
+    width: 75%;
+  }
+
+  .form-parts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
