@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form");
   const submitButton = document.getElementById("submitButton");
+  const modal = document.getElementById("modal");
+  const closeButton = document.getElementById("closeButton");
+  const modalMessage = document.getElementById("modal-message");
 
   addFocusListeners();
 
@@ -10,14 +13,30 @@ document.addEventListener("DOMContentLoaded", function () {
     hola.textContent = ", " + nombreInput.value;
   });
 
+  // Mostrar modal
+  const showModal = (message) => {
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+  };
+
+  // Cerrar modal
+  closeButton.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
   submitButton.addEventListener("click", function (event) {
     event.preventDefault();
     const errores = [];
     if (validateForm(errores)) {
-      showAlert("¡Formulario enviado correctamente!");
-      location.reload();
+      showModal("¡Formulario enviado correctamente!");
     } else {
-      showAlert("Hay errores en el formulario: " + errores.join(", "));
+      showModal("Hay errores en el formulario: " + errores.join(", "));
     }
   });
 
