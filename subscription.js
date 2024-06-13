@@ -52,9 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Error:", error);
           showModal("Error al enviar el formulario: " + error.message);
+          modalResponse.textContent = "";
         });
     } else {
       showModal("Hay errores en el formulario: " + errores.join(", "));
+      modalResponse.textContent = "";
     }
   });
 
