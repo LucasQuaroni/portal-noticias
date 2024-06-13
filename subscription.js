@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalMessage = document.getElementById("modal-message");
 
   addFocusListeners();
+  loadFormValues();
 
   const nombreInput = document.getElementById("nombre");
   nombreInput.addEventListener("keyup", function () {
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     const errores = [];
     if (validateForm(errores)) {
+      saveFormValues();
       showModal("¡Formulario enviado correctamente!");
     } else {
       showModal("Hay errores en el formulario: " + errores.join(", "));
@@ -168,5 +170,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showAlert(message) {
     alert(message);
+  }
+
+  function saveFormValues() {
+    const inputs = [
+      "nombre", "email", "password", "password2", "edad",
+      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+    ];
+    inputs.forEach(inputId => {
+      const inputElement = document.getElementById(inputId);
+      localStorage.setItem(inputId, inputElement.value);
+    });
+  }
+  
+  function loadFormValues() {
+    const inputs = [
+      "nombre", "email", "password", "password2", "edad",
+      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+    ];
+    inputs.forEach(inputId => {
+      const inputElement = document.getElementById(inputId);
+      const storedValue = localStorage.getItem(inputId);
+      if (storedValue) {
+        inputElement.value = storedValue;
+      }
+    });
   }
 });
