@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form");
-  const submitButton = document.getElementById("submitButton");
-  const modal = document.getElementById("modal");
-  const closeButton = document.getElementById("closeButton");
-  const modalMessage = document.getElementById("modal-message");
+  var form = document.getElementById("form");
+  var submitButton = document.getElementById("submitButton");
+  var modal = document.getElementById("modal");
+  var closeButton = document.getElementById("closeButton");
+  var modalMessage = document.getElementById("modal-message");
 
   addFocusListeners();
   loadFormValues();
 
-  const nombreInput = document.getElementById("nombre");
+  var nombreInput = document.getElementById("nombre");
   nombreInput.addEventListener("keyup", function () {
-    const hola = document.getElementById("hola");
+    var hola = document.getElementById("hola");
     hola.textContent = ", " + nombreInput.value;
   });
 
   // Mostrar modal
-  const showModal = (message) => {
+  var showModal = (message) => {
     modalMessage.textContent = message;
     modal.style.display = "block";
   };
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   submitButton.addEventListener("click", function (event) {
     event.preventDefault();
-    const errores = [];
+    var errores = [];
     if (validateForm(errores)) {
       saveFormValues();
       showModal("¡Formulario enviado correctamente!");
@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function addFocusListeners() {
-    const inputs = [
+    var inputs = [
       "nombre", "email", "password", "password2", "edad",
       "telefono", "direccion", "ciudad", "codigo-postal", "dni"
     ];
     inputs.forEach(inputId => {
-      const inputElement = document.getElementById(inputId);
-      const errorElement = document.getElementById(`error-${inputId}`);
+      var inputElement = document.getElementById(inputId);
+      var errorElement = document.getElementById(`error-${inputId}`);
       inputElement.addEventListener("focus", () => {
         errorElement.textContent = "";
       });
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateForm(errores) {
     let isValid = true;
 
-    const nombreInput = document.getElementById("nombre");
-    const nombreError = document.getElementById("error-nombre");
+    var nombreInput = document.getElementById("nombre");
+    var nombreError = document.getElementById("error-nombre");
     if (
       nombreInput.value.trim().length < 6 ||
       !nombreInput.value.includes(" ")
@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
       nombreError.textContent = "";
     }
 
-    const emailInput = document.getElementById("email");
-    const emailError = document.getElementById("error-email");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var emailInput = document.getElementById("email");
+    var emailError = document.getElementById("error-email");
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value)) {
       isValid = false;
       emailError.textContent = "El email es inválido";
@@ -83,8 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
       emailError.textContent = "";
     }
 
-    const passwordInput = document.getElementById("password");
-    const passwordError = document.getElementById("error-password");
+    var passwordInput = document.getElementById("password");
+    var passwordError = document.getElementById("error-password");
     if (passwordInput.value.length < 8 || !/\d/.test(passwordInput.value)) {
       isValid = false;
       passwordError.textContent = "Minimo 8 carat. y un num";
@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
       passwordError.textContent = "";
     }
 
-    const password2Input = document.getElementById("password2");
-    const password2Error = document.getElementById("error-password2");
+    var password2Input = document.getElementById("password2");
+    var password2Error = document.getElementById("error-password2");
     if (password2Input.value !== passwordInput.value) {
       isValid = false;
       password2Error.textContent = "Las contraseñas no coinciden";
@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
       password2Error.textContent = "";
     }
 
-    const edadInput = document.getElementById("edad");
-    const edadError = document.getElementById("error-edad");
+    var edadInput = document.getElementById("edad");
+    var edadError = document.getElementById("error-edad");
     if (parseInt(edadInput.value) < 18 || isNaN(parseInt(edadInput.value))) {
       isValid = false;
       edadError.textContent = "La edad debe ser >= a 18";
@@ -113,9 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
       edadError.textContent = "";
     }
 
-    const telefonoInput = document.getElementById("telefono");
-    const telefonoError = document.getElementById("error-telefono");
-    const telefonoRegex = /^\d{7,}$/;
+    var telefonoInput = document.getElementById("telefono");
+    var telefonoError = document.getElementById("error-telefono");
+    var telefonoRegex = /^\d{7,}$/;
     if (!telefonoRegex.test(telefonoInput.value)) {
       isValid = false;
       telefonoError.textContent = "El teléfono es inválido";
@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
       telefonoError.textContent = "";
     }
 
-    const direccionInput = document.getElementById("direccion");
-    const direccionError = document.getElementById("error-direccion");
+    var direccionInput = document.getElementById("direccion");
+    var direccionError = document.getElementById("error-direccion");
     if (direccionInput.value.trim().length < 5) {
       isValid = false;
       direccionError.textContent = "La dirección es inválida";
@@ -134,8 +134,8 @@ document.addEventListener("DOMContentLoaded", function () {
       direccionError.textContent = "";
     }
 
-    const ciudadInput = document.getElementById("ciudad");
-    const ciudadError = document.getElementById("error-ciudad");
+    var ciudadInput = document.getElementById("ciudad");
+    var ciudadError = document.getElementById("error-ciudad");
     if (ciudadInput.value.trim().length < 3) {
       isValid = false;
       ciudadError.textContent = "La ciudad es inválida";
@@ -144,8 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ciudadError.textContent = "";
     }
 
-    const codigoPostalInput = document.getElementById("codigo-postal");
-    const codigoPostalError = document.getElementById("error-codigo-postal");
+    var codigoPostalInput = document.getElementById("codigo-postal");
+    var codigoPostalError = document.getElementById("error-codigo-postal");
     if (codigoPostalInput.value.trim().length < 3) {
       isValid = false;
       codigoPostalError.textContent = "El código postal es inválido";
@@ -154,9 +154,9 @@ document.addEventListener("DOMContentLoaded", function () {
       codigoPostalError.textContent = "";
     }
 
-    const dniInput = document.getElementById("dni");
-    const dniError = document.getElementById("error-dni");
-    const dniRegex = /^\d{7,8}$/;
+    var dniInput = document.getElementById("dni");
+    var dniError = document.getElementById("error-dni");
+    var dniRegex = /^\d{7,8}$/;
     if (!dniRegex.test(dniInput.value)) {
       isValid = false;
       dniError.textContent = "El DNI es inválido";
@@ -173,24 +173,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveFormValues() {
-    const inputs = [
+    var inputs = [
       "nombre", "email", "password", "password2", "edad",
       "telefono", "direccion", "ciudad", "codigo-postal", "dni"
     ];
     inputs.forEach(inputId => {
-      const inputElement = document.getElementById(inputId);
+      var inputElement = document.getElementById(inputId);
       localStorage.setItem(inputId, inputElement.value);
     });
   }
   
   function loadFormValues() {
-    const inputs = [
+    var inputs = [
       "nombre", "email", "password", "password2", "edad",
       "telefono", "direccion", "ciudad", "codigo-postal", "dni"
     ];
     inputs.forEach(inputId => {
-      const inputElement = document.getElementById(inputId);
-      const storedValue = localStorage.getItem(inputId);
+      var inputElement = document.getElementById(inputId);
+      var storedValue = localStorage.getItem(inputId);
       if (storedValue) {
         inputElement.value = storedValue;
       }
