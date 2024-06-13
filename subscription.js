@@ -1,9 +1,12 @@
+var API_URL = "https://jsonplaceholder.typicode.com";
+
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("form");
   var submitButton = document.getElementById("submitButton");
   var modal = document.getElementById("modal");
   var closeButton = document.getElementById("closeButton");
   var modalMessage = document.getElementById("modal-message");
+  var modalResponse = document.getElementById("modal-response");
 
   addFocusListeners();
   loadFormValues();
@@ -14,13 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     hola.textContent = ", " + nombreInput.value;
   });
 
-  // Mostrar modal
   var showModal = (message) => {
     modalMessage.textContent = message;
     modal.style.display = "block";
   };
 
-  // Cerrar modal
   closeButton.onclick = function () {
     modal.style.display = "none";
   };
@@ -35,8 +36,23 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     var errores = [];
     if (validateForm(errores)) {
-      saveFormValues();
-      showModal("¡Formulario enviado correctamente!");
+      var formData = new FormData(form);
+      var data = new URLSearchParams(formData);
+      fetch(`${API_URL}/posts`, {
+        method: "POST",
+        body: data,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          saveFormValues();
+          showModal("¡Formulario enviado correctamente!");
+          modalResponse.textContent = JSON.stringify(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          showModal("Error al enviar el formulario: " + error.message);
+        });
     } else {
       showModal("Hay errores en el formulario: " + errores.join(", "));
     }
@@ -44,10 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addFocusListeners() {
     var inputs = [
-      "nombre", "email", "password", "password2", "edad",
-      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+      "nombre",
+      "email",
+      "password",
+      "password2",
+      "edad",
+      "telefono",
+      "direccion",
+      "ciudad",
+      "codigo-postal",
+      "dni",
     ];
-    inputs.forEach(inputId => {
+    inputs.forEach((inputId) => {
       var inputElement = document.getElementById(inputId);
       var errorElement = document.getElementById(`error-${inputId}`);
       inputElement.addEventListener("focus", () => {
@@ -174,21 +198,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function saveFormValues() {
     var inputs = [
-      "nombre", "email", "password", "password2", "edad",
-      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+      "nombre",
+      "email",
+      "password",
+      "password2",
+      "edad",
+      "telefono",
+      "direccion",
+      "ciudad",
+      "codigo-postal",
+      "dni",
     ];
-    inputs.forEach(inputId => {
+    inputs.forEach((inputId) => {
       var inputElement = document.getElementById(inputId);
       localStorage.setItem(inputId, inputElement.value);
     });
   }
-  
+
   function loadFormValues() {
     var inputs = [
-      "nombre", "email", "password", "password2", "edad",
-      "telefono", "direccion", "ciudad", "codigo-postal", "dni"
+      "nombre",
+      "email",
+      "password",
+      "password2",
+      "edad",
+      "telefono",
+      "direccion",
+      "ciudad",
+      "codigo-postal",
+      "dni",
     ];
-    inputs.forEach(inputId => {
+    inputs.forEach((inputId) => {
       var inputElement = document.getElementById(inputId);
       var storedValue = localStorage.getItem(inputId);
       if (storedValue) {
