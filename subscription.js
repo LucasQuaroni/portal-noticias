@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateForm(errores) {
-    let isValid = true;
+    var isValid = true;
 
     var nombreInput = document.getElementById("nombre");
     var nombreError = document.getElementById("error-nombre");
